@@ -1,0 +1,60 @@
+<!-- <h2>Editar Tarea</h2>
+<form *ngIf="tarea" (ngSubmit)="updateTarea()">
+  <label for="nombre">Nombre:</label>
+  <input type="text" id="nombre" [(ngModel)]="tarea.descripcion" name="nombre" required>
+  <label for="descripcion">Descripción:</label>
+  <input type="text" id="descripcion" [(ngModel)]="tarea.descripcion" name="descripcion" required>
+  <button type="submit">Actualizar</button>
+</form> -->
+
+<!-- <h2>Editar Tarea</h2>
+<form (ngSubmit)="editTarea()">
+  <div>
+    <label for="descripcion">Descripción:</label>
+    <input type="text" id="descripcion" [(ngModel)]="tarea.descripcion" name="descripcion" required>
+  </div>
+  <div>
+    <label for="fechaVencimiento">Fecha de Vencimiento:</label>
+    <input type="date" id="fechaVencimiento" [(ngModel)]="tarea.fechaVencimiento" name="fechaVencimiento" required>
+  </div>
+  <div>
+    <label for="prioridad">Prioridad:</label>
+    <select id="prioridad" [(ngModel)]="tarea.prioridad" name="prioridad" required>
+      <option value="alta">Alta</option>
+      <option value="media">Media</option>
+      <option value="baja">Baja</option>
+    </select>
+  </div>
+  <div>
+    <label for="estaIncompleta">¿Está Incompleta?</label>
+    <input type="checkbox" id="estaIncompleta" [(ngModel)]="tarea.estaIncompleta" name="estaIncompleta">
+  </div>
+  <button type="submit">Guardar Cambios</button>
+</form> -->
+
+
+
+<h2>Editar Tarea</h2>
+<form *ngIf="tarea" (ngSubmit)="editTarea()">
+  <div>
+    <label for="descripcion">Descripción:</label>
+    <input type="text" id="descripcion" [(ngModel)]="tarea.descripcion" name="descripcion" required>
+  </div>
+  <div>
+    <label for="fechaVencimiento">Fecha de Vencimiento:</label>
+    <input type="date" id="fechaVencimiento" [(ngModel)]="tarea.fechaVencimiento" name="fechaVencimiento" required>
+  </div>
+  <div>
+    <label for="prioridad">Prioridad:</label>
+    <select id="prioridad" [(ngModel)]="tarea.prioridad" name="prioridad" required>
+      <option value="alta">Alta</option>
+      <option value="media">Media</option>
+      <option value="baja">Baja</option>
+    </select>
+  </div>
+  <div>
+    <label for="estaIncompleta">¿Está Incompleta?</label>
+    <input type="checkbox" id="estaIncompleta" [(ngModel)]="tarea.estaIncompleta" name="estaIncompleta">
+  </div>
+  <button type="submit">Guardar Cambios</button>
+</form>
