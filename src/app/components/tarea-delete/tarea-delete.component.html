@@ -1,4 +1,12 @@
-<h2>Eliminar Tarea</h2>
+<!-- <h2>Eliminar Tarea</h2>
 <p *ngIf="tarea">¿Estás seguro de que deseas eliminar la tarea "{{ tarea.descripcion }}"?</p>
 <button *ngIf="tarea" (click)="deleteTarea()">Eliminar</button>
-<button (click)="navigateToTareas()">Cancelar</button>
+<button (click)="navigateToTareas()">Cancelar</button> -->
+
+
+<h2 class="my-4">Eliminar Tarea</h2>
+<p *ngIf="tarea">¿Estás seguro de que deseas eliminar la tarea "{{ tarea.descripcion }}"?</p>
+<div class="d-flex justify-content-between">
+  <button class="btn btn-danger" (click)="deleteTarea()">Eliminar</button>
+  <button class="btn btn-secondary" (click)="cancel()">Cancelar</button>
+</div>
