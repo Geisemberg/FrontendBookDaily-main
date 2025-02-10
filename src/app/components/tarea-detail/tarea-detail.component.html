@@ -1,0 +1,57 @@
+<!-- <h2 class="my-4">Detalle de Tarea</h2>
+<div *ngIf="tarea">
+  <p><strong>Descripción:</strong> {{ tarea.descripcion }}</p>
+  <p><strong>Fecha de Vencimiento:</strong> {{ tarea.fechaVencimiento | date:'dd/MM/yyyy' }}</p>
+  <p><strong>Prioridad:</strong> {{ tarea.prioridad }}</p>
+  <p><strong>Estado:</strong> {{ tarea.estaIncompleta ? 'Incompleta' : 'Completa' }}</p>
+</div> -->
+
+<!-- <h2 class="my-4">Detalle de Tarea</h2>
+<form (ngSubmit)="consultarTarea()">
+  <div class="mb-3">
+    <label for="tareaId" class="form-label">ID de la Tarea:</label>
+    <input type="number" id="tareaId" [(ngModel)]="tareaId" name="tareaId" class="form-control" required>
+  </div>
+  <button type="submit" class="btn btn-primary">Consultar</button>
+</form>
+<div *ngIf="tarea" class="mt-4">
+  <p><strong>Descripción:</strong> {{ tarea.descripcion }}</p>
+  <p><strong>Fecha de Vencimiento:</strong> {{ tarea.fechaVencimiento | date:'dd/MM/yyyy' }}</p>
+  <p><strong>Prioridad:</strong> {{ tarea.prioridad }}</p>
+  <p><strong>Estado:</strong> {{ tarea.estaIncompleta ? 'Incompleta' : 'Completa' }}</p>
+</div> -->
+
+
+<!-- <h2 class="my-4">Detalle de Tarea</h2>
+<form (ngSubmit)="consultarTarea()">
+  <div class="mb-3">
+    <label for="tareaId" class="form-label">ID de la Tarea:</label>
+    <input type="number" id="tareaId" [(ngModel)]="tareaId" name="tareaId" class="form-control" required>
+  </div>
+  <button type="submit" class="btn btn-primary">Consultar</button>
+</form>
+<div *ngIf="errorMessage" class="alert alert-danger mt-3">{{ errorMessage }}</div>
+<div *ngIf="tarea" class="mt-4">
+  <p><strong>Descripción:</strong> {{ tarea.descripcion }}</p>
+  <p><strong>Fecha de Vencimiento:</strong> {{ tarea.fechaVencimiento | date:'dd/MM/yyyy' }}</p>
+  <p><strong>Prioridad:</strong> {{ tarea.prioridad }}</p>
+  <p><strong>Estado:</strong> {{ tarea.estaIncompleta ? 'Incompleta' : 'Completa' }}</p>
+</div> -->
+
+
+<h2 class="my-4">Detalle de Tarea</h2>
+<form (ngSubmit)="consultarTarea()" #tareaForm="ngForm">
+  <div class="mb-3">
+    <label for="tareaId" class="form-label">ID de la Tarea:</label>
+    <input type="number" id="tareaId" [(ngModel)]="tareaId" name="tareaId" class="form-control" required>
+    <div *ngIf="tareaForm.submitted && (!tareaId || tareaId <= 0)" class="text-danger">Por favor, introduzca un ID válido.</div>
+  </div>
+  <button type="submit" class="btn btn-primary">Consultar</button>
+</form>
+<div *ngIf="errorMessage" class="alert alert-danger mt-3">{{ errorMessage }}</div>
+<div *ngIf="tarea" class="mt-4">
+  <p><strong>Descripción:</strong> {{ tarea.descripcion }}</p>
+  <p><strong>Fecha de Vencimiento:</strong> {{ tarea.fechaVencimiento | date:'dd/MM/yyyy' }}</p>
+  <p><strong>Prioridad:</strong> {{ tarea.prioridad }}</p>
+  <p><strong>Estado:</strong> {{ tarea.estaIncompleta ? 'Incompleta' : 'Completa' }}</p>
+</div>

@@ -33,7 +33,7 @@
 </form> -->
 
 
-<h2 class="my-4">Crear Tarea</h2>
+<!-- <h2 class="my-4">Crear Tarea</h2>
 <form (ngSubmit)="createTarea()">
   <div class="mb-3">
     <label for="descripcion" class="form-label">Descripción:</label>
@@ -56,4 +56,35 @@
     <label for="estaIncompleta" class="form-check-label">¿Está Incompleta?</label>
   </div>
   <button type="submit" class="btn btn-success">Crear</button>
+</form> -->
+
+
+<h2 class="my-4">Crear Tarea</h2>
+<form (ngSubmit)="createTarea()" #tareaForm="ngForm">
+  <div class="mb-3">
+    <label for="descripcion" class="form-label">Descripción:</label>
+    <input type="text" id="descripcion" [(ngModel)]="tarea.descripcion" name="descripcion" class="form-control" required>
+    <div *ngIf="tareaForm.submitted && !tarea.descripcion" class="text-danger">Descripción es requerida.</div>
+  </div>
+  <div class="mb-3">
+    <label for="fechaVencimiento" class="form-label">Fecha de Vencimiento:</label>
+    <input type="date" id="fechaVencimiento" [(ngModel)]="tarea.fechaVencimiento" name="fechaVencimiento" class="form-control" required>
+    <div *ngIf="tareaForm.submitted && !tarea.fechaVencimiento" class="text-danger">Fecha de Vencimiento es requerida.</div>
+  </div>
+  <div class="mb-3">
+    <label for="prioridad" class="form-label">Prioridad:</label>
+    <select id="prioridad" [(ngModel)]="tarea.prioridad" name="prioridad" class="form-select" required>
+      <option value="alta">Alta</option>
+      <option value="media">Media</option>
+      <option value="baja">Baja</option>
+    </select>
+    <div *ngIf="tareaForm.submitted && !tarea.prioridad" class="text-danger">Prioridad es requerida.</div>
+  </div>
+  <div class="form-check mb-3">
+    <input type="checkbox" id="estaIncompleta" [(ngModel)]="tarea.estaIncompleta" name="estaIncompleta" class="form-check-input">
+    <label for="estaIncompleta" class="form-check-label">¿Está Incompleta?</label>
+  </div>
+  <button type="submit" class="btn btn-success">Crear</button>
 </form>
+<div *ngIf="errorMessage" class="alert alert-danger mt-3">{{ errorMessage }}</div>
+<div *ngIf="successMessage" class="alert alert-success mt-3">{{ successMessage }}</div>

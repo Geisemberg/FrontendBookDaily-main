@@ -6,3 +6,11 @@ export class Tarea {
   estaIncompleta: boolean | undefined;
   // Agrega más campos según tu modelo en el backend
 }
+
+// export class Tarea {
+//   id?: number;
+//   descripcion?: string;
+//   fechaVencimiento?: Date;
+//   prioridad?: string;
+//   estaIncompleta?: boolean;
+// }
